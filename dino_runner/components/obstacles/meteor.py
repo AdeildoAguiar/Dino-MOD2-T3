@@ -5,7 +5,7 @@ from dino_runner.components.obstacles.obstacle import Obstacle
 class Meteor(Obstacle):
     def __init__(self):
         super().__init__(METEOR, 0)
-        self.rect.y = 100
+        self.rect.y = 120
         self.step_index = 0
 
 
