@@ -51,13 +51,14 @@ class Game:
             if event.type == pygame.QUIT:
                 self.playing = False
                 self.running = False
-
+    
     def update(self):
         user_input = pygame.key.get_pressed()
         self.player.update(user_input)
         self.obstacle_manager.update(self)
         self.update_score()
         self.power_up_manager.update(self.score, self.game_speed, self.player)
+
 
     def update_score(self):
         self.score += 1
@@ -140,3 +141,4 @@ class Game:
         pygame.display.flip()
 
         self.handle_events_on_menu()
+        
