@@ -97,13 +97,14 @@ class Game:
     def draw_power_up_time(self):
         if self.player.has_power_up:
             time_to_show = round((self.player.power_up_time - pygame.time.get_ticks()) / 1000, 2)
-            if time_to_show >= 0:
+            if time_to_show >= 0:  
                 draw_message_component(
-                    f"{self.player.type.captalize()} enable for {time_to_show} seconds",
-                    self.screen, 
-                    fonte_size = 18,
-                    pos_x_center= 500,
-                    pos_y_center= 40
+                    f"{self.player.type.capitalize()} enabled for {time_to_show} seconds",
+                    self.screen,
+                    font_size = 18,        
+                    pos_x_center = 500,  
+                    pos_y_center = 40,  
+ 
                 )
             else:
                 self.player.has_power_up = False
@@ -139,6 +140,5 @@ class Game:
             self.screen.blit(ICON, (half_screen_width - 40, half_screen_height - 30))
 
         pygame.display.flip()
-
         self.handle_events_on_menu()
-        
+     
